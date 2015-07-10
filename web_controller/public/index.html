@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ROVision Web Controller</title>
+	<!-- Bootstraop -->
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" media="screen">
+	<link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
+	<!-- side bar css -->
+	<link rel="stylesheet" href="/stylesheets/sidebar.css">
+	<style>
+	#video-wrapper{
+		background-image:url("/images/test-image.gif");
+		background-size:cover;
+		position:absolute;
+		margin-top: 50px;
+		width:100%;
+		height:90vh;
+	}
+	#rovision_logo{
+		position:absolute;
+		right : 10px;
+		top : 10px;
+		width : 10%;
+	}
+	#cockpit{
+		background-image:url("/images/background.png");
+		background-size:100% 100%;
+		position:absolute;
+		bottom :0px;
+		width:100%;
+		height:45vh;
+	}
+	</style>
+</head>
+<body>
+	<!-- Navigation bar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-brand">ROVision Controller</div>
+			<button class ="navbar-toggle" data-toggle ="collapse" data-target =".navHeaderCollapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<div class ="collapse navbar-collapse navHeaderCollapse">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="#">About</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- Navigation bar end -->
+
+	<div id="wrapper" class="active">
+		<!-- Side bar -->
+		<div id="sidebar-wrapper">
+			<ul id="sidebar_menu" class="sidebar-nav">
+				<li class="sidebar-brand">
+					<a id="menu-toggle" href="#">Menu<span id="main_icon" class="glyphicon glyphicon glyphicon-transfer"></span></a>
+				</li>
+			</ul>
+			<ul class="sidebar-nav" id="sidebar">
+				<li><a href="#">Cockpit<span class="sub_icon glyphicon glyphicon-off"></span></a></li>
+				<li><a href="#">Location<span class="sub_icon glyphicon glyphicon-map-marker"></span></a></li>
+				<li><a href="#">Broadcasting<span class="sub_icon glyphicon glyphicon-facetime-video"></span></a></li>
+				<li><a href="#">Setting<span class="sub_icon glyphicon glyphicon-cog"></span></a></li>
+			</ul>
+
+		</div>
+		<!-- Side bar end-->
+
+		<!-- Content -->
+		<div id="content-wrapper">
+			<!-- Video Content -->
+			<div id="video-wrapper">
+				<img src="/images/rovision_white.png" id="rovision_logo">
+			</div>
+
+			<!-- Cockpit -->
+			<div id="cockpit">
+			</div>
+		</div>
+	</div>
+	
+
+	<script src="/javascripts/jquery-1.11.3.min.js"></script>
+	<script src="/bootstrap/js/bootstrap.min.js"></script>
+	<!-- Toggle sidebar-->
+	<script>
+		$("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("active");
+		});
+	</script>
+</body>
+</html>

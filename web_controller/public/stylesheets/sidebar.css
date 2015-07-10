@@ -1,0 +1,67 @@
+		#main_icon{
+			float: right;
+			padding-right : 10px;
+			padding-top : 15px;
+		}
+		.sub_icon{
+			padding-right : 13px;
+			padding-top : 13px;
+			float : right;
+		}
+		#wrapper.active{
+			padding-left: 210px;
+		}
+
+		.sidebar-nav li a:hover, .sidebar-nav li a:focus{
+			color: #fff;
+			background: rgba(255,255,255,0.2);
+			text-decoration: none;
+		}
+		#sidebar_menu li a, .sidebar-nav li a{
+			color: #999;
+			background: #252525;
+			border-top: 1px solid #373737;
+    		border-bottom: 1px solid #1A1A1A;
+    		text-decoration: none;
+    		float:left;
+    		width : 250px;
+    		-webkit-transition: background .5s;
+		    -moz-transition: background .5s;
+		    -o-transition: background .5s;
+		    -ms-transition: background .5s;
+		    transition: background .5s;
+
+		}
+		#sidebar-wrapper {
+			background : #222;
+			margin-left : -210px;
+			margin-top : 50px;
+			position: fixed;
+			height : 100%;
+			z-index : 10000;
+		}
+		#wrapper{
+			transition: all .4s ease 0s;
+		}
+		.sidebar-nav > .sidebar-brand{
+			height: 55px;
+			line-height : 50px;
+			font-size : 20px;
+		}
+
+		.sidebar-nav li {
+			line-height : 40px;
+			text-indent : 20px;
+		}
+		.sidebar-nav {
+		    width: 250px;
+		    list-style: none;
+		    margin: 0;
+		    padding: 0;
+		}
+		#content-wrapper{
+		position:relative;
+		height : 100vh;
+		margin-left: 40px;
+		margin-top : 0px;
+	}

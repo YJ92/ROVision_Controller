@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ROVision Web Controller</title>
+	<style>
+		body{
+			margin :0;
+			background-color: black;
+		}
+		#left{
+			background-image:url("/images/test-image.gif");
+			background-size:cover;
+			position:absolute;
+			-webkit-mask-box-image: url("/images/mask.png");
+			/* 16:9 */
+			width:395px;
+			height:395px;
+			bottom:0;
+		}
+		#right{
+			background-image:url("/images/test-image.gif");
+			background-size:cover;
+			position:absolute;
+			-webkit-mask-box-image: url("/images/mask.png");
+			/* 16:9 */
+			width:395px;
+			height:395px;
+			right:0;
+			bottom:0;
+		}
+	</style>
+</head>
+<body>
+	<div id="left"></div>
+	<div id="right"></div>
+</body>
+</html>

@@ -42,7 +42,8 @@
 			<ul class="sidebar-nav" id="sidebar">
 				<li><a href="#">Cockpit<span class="sub_icon glyphicon glyphicon-off"></span></a></li>
 				<li><a href="#">Location<span class="sub_icon glyphicon glyphicon-map-marker"></span></a></li>
-				<li><a href="#" onclick="popup();">Broadcasting<span class="sub_icon glyphicon glyphicon-facetime-video"></span></a></li>
+				<li><a href="#" onclick="popup_broadcasting();">Broadcasting<span class="sub_icon glyphicon glyphicon-facetime-video"></span></a></li>
+				<li><a href="#" onclick="popup_VR();">ROVision VR<span class="sub_icon glyphicon glyphicon-eye-open"></span></a></li>
 				<li><a href="#">Setting<span class="sub_icon glyphicon glyphicon-cog"></span></a></li>
 			</ul>
 
@@ -103,8 +104,12 @@
 			$("#cockpit-bottom-contents").toggle("slow");
 		});
 
-		function popup(){
-			window.open("/popup","_new","width=800,height=450");
+		function popup_broadcasting(){
+			window.open("/popup_broadcasting","_new","width=800,height=450");
+		}
+
+		function popup_VR(){
+			window.open("/popup_VR","_new","width=800,height=450");
 		}
 	</script>
 </body>

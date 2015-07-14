@@ -10,6 +10,20 @@ var users = require('./routes/users');
 
 var app = express();
 
+// Seirlaport
+var sp = require('serialport');
+var UART1_port = "/dev/ttyO1";
+var option = { baudrate : 9600 };
+var UART_1 = new sp.SerialPort(UART1_port, option);
+
+UART_1.on('open',function(){
+  console.log("UART1 open\n");
+  
+  UART_1.on('data',function(data){
+      // TODO
+  });
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -59,4 +73,45 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 
-app.listen(3000);
+var server = app.listen(52273,function(){
+  console.log("Server is running at 52273 port");
+});
+
+
+// Socket.io
+
+var io = require("socket.io").listen(server);
+
+io.on('connection',function(socket){
+
+  socket.on('keydown',function(data){
+
+    switch(data){
+      case 'up' :
+        UART_1.write('S11E');
+        console.log('up');
+        break;
+      case 'down' :
+        UART_1.write('S22E');
+        console.log('down');
+        break;
+      case 'left' :
+        UART_1.write('S12E');
+        console.log('left');
+        break;
+      case 'right' :
+        UART_1.write('S21E');
+        console.log('right');
+        break;
+      }
+
+    });
+
+    socket.on('keyup',function(data){
+
+      UART_1.write('S00E');
+      console.log('stop');
+
+    });
+
+});

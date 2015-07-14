@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="/stylesheets/sidebar.css">
 	<!-- cockpit css -->
 	<link rel="stylesheet" href="/stylesheets/cockpit.css">
-
+	<!-- Socket io -->
+	<script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
 	<!-- Navigation bar -->
@@ -111,6 +112,54 @@
 		function popup_VR(){
 			window.open("/popup_VR","_new","width=800,height=450");
 		}
+	</script>
+	
+	<!-- Socket io -->
+	<script>
+$(function(){
+		var socket = io();
+		$(document).keydown(function(event){
+			switch(event.keyCode){
+				case 16 :
+					break;
+				case 17 :
+					break;
+				case 38 :
+					socket.emit('keydown','up');
+					break;
+				case 40 :
+					socket.emit('keydown','down');
+					break;
+				case 37 :
+					socket.emit('keydown','left');
+					break;
+				case 39 :
+					socket.emit('keydown','right');
+					break;
+			}
+		});
+	
+		$(document).keyup(function(event){
+			switch(event.keyCode){
+				case 16:
+					break;
+				case 17:
+					break;
+				case 38:
+					socket.emit('keyup','up');
+					break;
+				case 40:
+					socket.emit('keyup','down');
+					break;
+				case 37:
+					socket.emit('keyup','left');
+					break;
+				case 39:
+					socket.emit('keyup','right');
+					break;
+			}
+		});
+	});		
 	</script>
 </body>
 </html>
